@@ -1,9 +1,7 @@
-package 분할정복;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class 특별상 {
+public class Q24460 {
 	static int arr[][];
 	
 	public static void main(String[] args) {
