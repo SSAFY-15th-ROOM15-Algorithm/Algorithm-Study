@@ -1,15 +1,5 @@
 import java.util.Scanner;
 
-public class Main {
-    static int N;
-    static int[] input;     // 입력받은 숫자 배열
-    static int[] selected;  // 순열로 나열된 숫자 배열
-    static boolean[] visited; // 방문 체크
-=======
-import java.util.Scanner;
-
-import java.util.Scanner;
-
 public class Q10819 {
     static int N;
     static int[] input;     // 입력받은 숫자 배열
