@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Q1967 {
+public class Q2667 {
     static int N;
     static int[][] map;
     static boolean[][] visited;
@@ -40,11 +40,15 @@ public class Q1967 {
 
     static int dfs(int x, int y) {
         visited[x][y] = true;
+        
         int count = 1;
         for (int i = 0; i < 4; i++) {
+        	
             int nx = x + dx[i];
             int ny = y + dy[i];
+            
             if (nx >= 0 && ny >= 0 && nx < N && ny < N) {
+            	
                 if (map[nx][ny] == 1 && !visited[nx][ny]) {
                     count += dfs(nx, ny);
                 }
