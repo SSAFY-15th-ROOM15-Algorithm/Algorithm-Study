@@ -52,7 +52,7 @@ public class Q2447 {
 		for(int i=x; i<x+n; i+=nextN) {
 			for (int j=y; j<y+n; j+=nextN) {
 				count++;
-				if (count == 5) {  // 9조각중 5번째 조각이면 걍 통째로 건너뛰어라 -> 공백 유지
+				if (count == 5) {  // 9조각중 5번째 조각이면 걍 통째로 true로 넘겨서 기저조건으로
 					draw(i, j, nextN, true);
 				} else {
 					draw(i, j, nextN, false);  // 5번째 조각 아니면 또 쪼개서 봐야지 1개짜리가 될때까지!!
