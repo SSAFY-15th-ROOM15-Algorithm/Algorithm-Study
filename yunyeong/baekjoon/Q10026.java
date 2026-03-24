@@ -3,14 +3,12 @@ package baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
-// Àû·Ï»ö¸Í ¹®Á¦
+// ì ë¡ìƒ‰ë§¹ ë¬¸ì œ
 
 public class Q10026 {
 	
-	// µ¨Å¸ ¹è¿­
+	// ë¸íƒ€ ë°°ì—´
 	static int[] dr = {-1, 1, 0, 0};
 	static int[] dc = {0, 0, -1, 1};
 	static int N;
@@ -23,10 +21,10 @@ public class Q10026 {
 		
 		N = Integer.parseInt(br.readLine());
 		
-		map1 = new char[N][N]; // ÁÖ¾îÁø ±×¸²
-		map2 = new char[N][N]; // Àû·Ï»ö¾àÀÌ º¸´Â ±×¸²
+		map1 = new char[N][N]; // ì£¼ì–´ì§„ ê·¸ë¦¼
+		map2 = new char[N][N]; // ì ë¡ìƒ‰ì•½ì´ ë³´ëŠ” ê·¸ë¦¼
 		
-		// ÀÔ·Â¹Ş±â
+		// ì…ë ¥ë°›ê¸°
 		for (int i=0; i<N; i++) {
 			String str = br.readLine();
 			for (int j=0; j<N; j++) {
@@ -37,7 +35,7 @@ public class Q10026 {
 			}
 		}
 		
-		// Àû·Ï»ö¸Í ¾Æ´Ñ »ç¶÷ÀÌ º¸´Â ±¸¿ª
+		// ì ë¡ìƒ‰ë§¹ ì•„ë‹Œ ì‚¬ëŒì´ ë³´ëŠ” êµ¬ì—­
 		visited = new boolean[N][N];
 		int cnt1 = 0;
 		
@@ -51,7 +49,7 @@ public class Q10026 {
 			}
 		}
 		
-		// Àû·Ï»ö¸ÍÀÎ »ç¶÷ÀÌ º¸´Â ±¸¿ª
+		// ì ë¡ìƒ‰ë§¹ì¸ ì‚¬ëŒì´ ë³´ëŠ” êµ¬ì—­
 		visited = new boolean[N][N];
 		int cnt2 = 0;
 		
@@ -65,17 +63,17 @@ public class Q10026 {
 			}
 		}		
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println(cnt1 + " " + cnt2);
 		
 	}
 	
 	private static void dfs(int i, int j, char[][] map) {
-		for (int d=0; d<4; d++) { // »óÇÏÁÂ¿ì Å½»ö
+		for (int d=0; d<4; d++) { // ìƒí•˜ì¢Œìš° íƒìƒ‰
 			int ni = i + dr[d];
 			int nj = j + dc[d];
 			
-			if ( ni<0 || ni>=N || nj<0 || nj>=N )  // ¹üÀ§ È®ÀÎ
+			if ( ni<0 || ni>=N || nj<0 || nj>=N )  // ë²”ìœ„ í™•ì¸
 				continue;
 			
 			if (map[ni][nj] == map[i][j] && !visited[ni][nj]) {
