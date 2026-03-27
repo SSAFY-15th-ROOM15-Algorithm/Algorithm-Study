@@ -41,7 +41,7 @@ public class Q16234 {
                     }
                 }
             }
-
+            
             if (!isMoved) break;
             days++;
         }
