@@ -26,7 +26,7 @@ public class Q17136 {
 	// 맵 탐색할거임 (r, c) 좌표를 탐색한다. cnt는 사용한 색종이 수
 	static void colorPapers(int r, int c, int cnt) {
 		// 끝까지 탐색했으면 최솟값 갱신
-		if (r >= 9 && c >= 9) {
+		if (r >= 9 && c > 9) {
 			min = Math.min(min, cnt);
 			return;
 		}
