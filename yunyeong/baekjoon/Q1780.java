@@ -8,9 +8,9 @@ import java.util.StringTokenizer;
 public class Q1780 {
 	
 	static int[][] board;
-    static int minusOne = 0; // -1·Î¸¸ Ã¤¿öÁø Á¾ÀÌ ¼ö
-    static int zero = 0;     // 0À¸·Î¸¸ Ã¤¿öÁø Á¾ÀÌ ¼ö
-    static int plusOne = 0;  // 1·Î¸¸ Ã¤¿öÁø Á¾ÀÌ ¼ö
+    static int minusOne = 0; // -1ë¡œë§Œ ì±„ì›Œì§„ ì¢…ì´ ìˆ˜
+    static int zero = 0;     // 0ìœ¼ë¡œë§Œ ì±„ì›Œì§„ ì¢…ì´ ìˆ˜
+    static int plusOne = 0;  // 1ë¡œë§Œ ì±„ì›Œì§„ ì¢…ì´ ìˆ˜
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,9 +31,9 @@ public class Q1780 {
         System.out.println(plusOne);
     }
 
-    // Á¾ÀÌ¸¦ ³ª´©´Â ÇÔ¼ö
+    // ì¢…ì´ë¥¼ ë‚˜ëˆ„ëŠ” í•¨ìˆ˜
     static void partition(int row, int col, int size) {
-        // 1. ÇöÀç ¿µ¿ªÀÌ ¸ğµÎ °°Àº ¼ıÀÚÀÎÁö Ã¼Å©
+        // 1. í˜„ì¬ ì˜ì—­ì´ ëª¨ë‘ ê°™ì€ ìˆ«ìì¸ì§€ ì²´í¬
         if (checkColor(row, col, size)) {
             int val = board[row][col];
             if (val == -1) minusOne++;
@@ -42,7 +42,7 @@ public class Q1780 {
             return;
         }
 
-        // 2. ¼ıÀÚ°¡ ´Ù¸£´Ù¸é 9µîºĞÀ¸·Î ÂÉ°³¼­ º½
+        // 2. ìˆ«ìê°€ ë‹¤ë¥´ë‹¤ë©´ 9ë“±ë¶„ìœ¼ë¡œ ìª¼ê°œì„œ ë´„
         int newSize = size / 3;
 
         for (int i = 0; i < 3; i++) {
@@ -52,7 +52,7 @@ public class Q1780 {
         }
     }
 
-    // ¿µ¿ª ³» ¼ıÀÚ°¡ ¸ğµÎ °°ÀºÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+    // ì˜ì—­ ë‚´ ìˆ«ìê°€ ëª¨ë‘ ê°™ì€ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
     static boolean checkColor(int row, int col, int size) {
         int firstValue = board[row][col];
 

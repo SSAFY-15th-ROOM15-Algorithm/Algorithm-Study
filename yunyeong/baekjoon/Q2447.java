@@ -13,11 +13,11 @@ public class Q2447 {
 		N = sc.nextInt();
 		map = new char[N][N];
 			
-		// Àç±ÍÇÔ¼ö È£Ãâ
+		// ì¬ê·€í•¨ìˆ˜ í˜¸ì¶œ
 		draw(0, 0, N, false);
 		
-		// Ãâ·Â
-		StringBuilder sb = new StringBuilder(); // ½Ã°£ ÃÊ°ú ¾È³ª°Ô ½ºÆ®¸µºô´õ »ç¿ëÇØ¼­ ÇÑ¹ø¿¡ Ãâ·Â
+		// ì¶œë ¥
+		StringBuilder sb = new StringBuilder(); // ì‹œê°„ ì´ˆê³¼ ì•ˆë‚˜ê²Œ ìŠ¤íŠ¸ë§ë¹Œë” ì‚¬ìš©í•´ì„œ í•œë²ˆì— ì¶œë ¥
 		for (int i=0; i<N; i++) {
 			for (int j=0; j<N; j++) {
 				sb.append(map[i][j]);
@@ -29,8 +29,8 @@ public class Q2447 {
 	
 	
 	static void draw(int x, int y, int n, boolean blank) {
-		// ±âÀúÁ¶°Ç
-		// 5¹øÂ° Ä­¸¸ blank=true·Î ÄÑÁ®¼­ ' ' ÀÔ·Â
+		// ê¸°ì €ì¡°ê±´
+		// 5ë²ˆì§¸ ì¹¸ë§Œ blank=trueë¡œ ì¼œì ¸ì„œ ' ' ì…ë ¥
 		if (blank) {
 			for (int i = x; i < x + n; i++) {
                 for (int j = y; j < y + n; j++) {
@@ -39,23 +39,23 @@ public class Q2447 {
             }
             return;
 		}
-		// ³ª¸ÓÁö´Â °è¼Ó ÂÉ°³´Ù°¡ ´õÀÌ»ó ÂÉ°¶ ¼ö ¾øÀ¸¸é º°
+		// ë‚˜ë¨¸ì§€ëŠ” ê³„ì† ìª¼ê°œë‹¤ê°€ ë”ì´ìƒ ìª¼ê°¤ ìˆ˜ ì—†ìœ¼ë©´ ë³„
 		if (n == 1) {
 			map[x][y] = '*';
 			return;
 		}
 		
-		// Àç±ÍºÎºĞ
+		// ì¬ê·€ë¶€ë¶„
 		int nextN = n/3;
 		int count = 0;
 		
 		for(int i=x; i<x+n; i+=nextN) {
 			for (int j=y; j<y+n; j+=nextN) {
 				count++;
-				if (count == 5) {  // 9Á¶°¢Áß 5¹øÂ° Á¶°¢ÀÌ¸é °Á ÅëÂ°·Î true·Î ³Ñ°Ü¼­ ±âÀúÁ¶°ÇÀ¸·Î
+				if (count == 5) {  // 9ì¡°ê°ì¤‘ 5ë²ˆì§¸ ì¡°ê°ì´ë©´ ê± í†µì§¸ë¡œ trueë¡œ ë„˜ê²¨ì„œ ê¸°ì €ì¡°ê±´ìœ¼ë¡œ
 					draw(i, j, nextN, true);
 				} else {
-					draw(i, j, nextN, false);  // 5¹øÂ° Á¶°¢ ¾Æ´Ï¸é ¶Ç ÂÉ°³¼­ ºÁ¾ßÁö 1°³Â¥¸®°¡ µÉ¶§±îÁö!!
+					draw(i, j, nextN, false);  // 5ë²ˆì§¸ ì¡°ê° ì•„ë‹ˆë©´ ë˜ ìª¼ê°œì„œ ë´ì•¼ì§€ 1ê°œì§œë¦¬ê°€ ë ë•Œê¹Œì§€!!
 				}
 				
 			}

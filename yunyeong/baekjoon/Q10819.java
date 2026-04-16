@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Q10819 {
 	
 	static int N;
-	static int[] input; // ÀÔ·Â¹ŞÀº ¼ø¼­·Î ³ÖÀ» ¹è¿­
-	static int[] ans;  // ÃÖ´ë Â÷ÀÌ°¡ ³¯ ¼ö ÀÖ´Â ¼ø¼­´ë·Î Á¤¸®ÇØ¼­ ÀÌ°É·Î °è»ê
-	static boolean[] visited;  // ¸î¹øÂ°²¨ »Ì¾Ò¾î! Ç¥½ÃÇØµÑ °Å
-	static int maxResult = 0;  // °á°ú°ª
+	static int[] input; // ì…ë ¥ë°›ì€ ìˆœì„œë¡œ ë„£ì„ ë°°ì—´
+	static int[] ans;  // ìµœëŒ€ ì°¨ì´ê°€ ë‚  ìˆ˜ ìˆëŠ” ìˆœì„œëŒ€ë¡œ ì •ë¦¬í•´ì„œ ì´ê±¸ë¡œ ê³„ì‚°
+	static boolean[] visited;  // ëª‡ë²ˆì§¸êº¼ ë½‘ì•˜ì–´! í‘œì‹œí•´ë‘˜ ê±°
+	static int maxResult = 0;  // ê²°ê³¼ê°’
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -23,29 +23,29 @@ public class Q10819 {
 			 input[i] = sc.nextInt();
 		 }
 		 
-		 backtrack(0);  // Àç±ÍÇÔ¼ö·Î ¼ø¿­ ±¸ÇØ¼­ °è»êÇÏ±ë
+		 backtrack(0);  // ì¬ê·€í•¨ìˆ˜ë¡œ ìˆœì—´ êµ¬í•´ì„œ ê³„ì‚°í•˜ê¹…
 		 
 		 System.out.println(maxResult);
 	}
 	
 	static void backtrack(int num) {
-		if (num == N) {  // N°³ ´Ù »Ì¾ÒÀ¸¸é Â÷ÀÌÀÇ ÇÕ °è»êÇÏ´Â °ÍÀÓ
+		if (num == N) {  // Nê°œ ë‹¤ ë½‘ì•˜ìœ¼ë©´ ì°¨ì´ì˜ í•© ê³„ì‚°í•˜ëŠ” ê²ƒì„
 			int sum = 0;
 			for (int i=0; i<N-1; i++) {
 				sum += Math.abs(ans[i] - ans[i+1]);
 			}
-			if (sum > maxResult) maxResult = sum;  // ÀÌ¹ø ¼ø¿­·Î ¸¸µç Â÷ÀÌÀÇ ÇÕÀÌ Á© Å©¸é °»½Å
+			if (sum > maxResult) maxResult = sum;  // ì´ë²ˆ ìˆœì—´ë¡œ ë§Œë“  ì°¨ì´ì˜ í•©ì´ ì ¤ í¬ë©´ ê°±ì‹ 
 			return;
 		}
 		
 		for (int i=0; i<N; i++) {
 			if (!visited[i]) {
 				
-				visited[i] = true;    // i¹øÂ°²¨ ½è¾î! Ç¥½Ã
-				ans[num] = input[i];  // ans ¹è¿­¿¡ i¹øÂ° ¼ıÀÚ ³Ö±â
-				backtrack(num+1);     // ´ÙÀ½ ÀÚ¸®¿¡ ¿Ã°Å Ã£À¸·¯ °¨ 
+				visited[i] = true;    // ië²ˆì§¸êº¼ ì¼ì–´! í‘œì‹œ
+				ans[num] = input[i];  // ans ë°°ì—´ì— ië²ˆì§¸ ìˆ«ì ë„£ê¸°
+				backtrack(num+1);     // ë‹¤ìŒ ìë¦¬ì— ì˜¬ê±° ì°¾ìœ¼ëŸ¬ ê° 
 				
-				visited[i] = false;   // ±×·¸°Ô ¼ø¿­ ÇÏ³ª ¸¸µé°í ³ª¸é ´Ù½Ã ¾È ½è´Ù°í Ç¥½ÃÇØ¼­ ´ÙÀ½ ¼ø¿­ ¸¸µé±â
+				visited[i] = false;   // ê·¸ë ‡ê²Œ ìˆœì—´ í•˜ë‚˜ ë§Œë“¤ê³  ë‚˜ë©´ ë‹¤ì‹œ ì•ˆ ì¼ë‹¤ê³  í‘œì‹œí•´ì„œ ë‹¤ìŒ ìˆœì—´ ë§Œë“¤ê¸°
 			}
 		}
 	}

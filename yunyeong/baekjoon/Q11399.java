@@ -8,7 +8,7 @@ public class Q11399 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		// ÀÔ·Â ¹Ş¾Æ¼­ ¹è¿­¿¡ ³Ö°í
+		// ì…ë ¥ ë°›ì•„ì„œ ë°°ì—´ì— ë„£ê³ 
 		int N = sc.nextInt();
 		int[] arr = new int[N];
 		
@@ -16,11 +16,11 @@ public class Q11399 {
 			arr[i] = sc.nextInt();
 		}
 		
-		// ¾Õ»ç¶÷ ¼ıÀÚ´Â °è¼Ó ´õÇØÁü -> ´õ Àû°Ô °É¸®´Â »ç¶÷ÀÌ ¾ÕÀ¸·Î ¿Í¾ßÇÔ
+		// ì•ì‚¬ëŒ ìˆ«ìëŠ” ê³„ì† ë”í•´ì§ -> ë” ì ê²Œ ê±¸ë¦¬ëŠ” ì‚¬ëŒì´ ì•ìœ¼ë¡œ ì™€ì•¼í•¨
 		Arrays.sort(arr);
 		
-		int time = 0; // °¢ÀÚ µ· »Ì´Â ½Ã°£
-		int result = 0;  // ÃÑÇÕ
+		int time = 0; // ê°ì ëˆ ë½‘ëŠ” ì‹œê°„
+		int result = 0;  // ì´í•©
 		for (int i=0; i<N; i++) {
 			time += arr[i];
 			result += time;
