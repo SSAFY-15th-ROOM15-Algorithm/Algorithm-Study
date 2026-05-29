@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class Q1766 {
+    
     static int N, M;
     static List<Integer>[] adj;
     static int[] indegree;
