@@ -67,7 +67,6 @@ public class Q1224 {
                 }
             }
             int ans = calc.pop();
-            System.out.println(postfix);
             System.out.println("#" + t + " " + ans);
         }
     }
