@@ -7,10 +7,10 @@ public class Q1222 {
             int len = sc.nextInt();
             String str = sc.next();
 
+            // 후외
             String postfix = "";
             Stack<Character> stack = new Stack<>();
 
-            // 후외
             for(int i = 0; i < len; i++) {
                 char c = str.charAt(i);
 
